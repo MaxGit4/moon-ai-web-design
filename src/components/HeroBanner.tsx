@@ -4,7 +4,6 @@ export interface HeroBannerProps {
   primaryCta: { label: string; href: string }
   secondaryCta?: { label: string; href: string }
   image: string
-  imageAlt?: string
 }
 
 export default function HeroBanner({
@@ -16,17 +15,15 @@ export default function HeroBanner({
 }: HeroBannerProps) {
   return (
     <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Full-bleed background image */}
       <img
         src={image}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      {/* Dark overlay — hit token ensures WCAG AA contrast on white text */}
+      {/* bg-hit/65 — WCAG AA contrast for white text over any background image */}
       <div className="absolute inset-0 bg-hit/65" />
 
-      {/* Centered content */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 py-24 text-center">
         <h1 className="font-bold text-5xl lg:text-6xl text-goku leading-[1.08] tracking-tight mb-6 font-sans">
           {headline}

@@ -54,16 +54,7 @@ This is the defined stack — follow these conventions and do not introduce alte
 3. Generate the implementation **against this repo's existing conventions** — match the framework, the Tailwind utility approach, and existing component primitives. Do not produce generic markup that ignores the codebase.
 4. Review the diff, run locally, iterate, commit.
 
-**Figma MCP tool requirements:**
-
-| Tool | Requires desktop app + selection? | Works with URL/nodeId only? |
-|------|-----------------------------------|-----------------------------|
-| `get_design_context` | Yes — desktop open, MCP plugin running, frame selected | No |
-| `get_metadata` | No | Yes |
-| `get_screenshot` | No | Yes |
-| `whoami` | No (auth check only) | N/A |
-
-If `get_design_context` returns "nothing selected": fall back to `get_metadata` + `get_screenshot` using the URL nodeId. The implementation will be complete — only the auto-generated code hints are missing. Use the `/figma-to-component` command which handles this fallback automatically.
+> For Figma MCP tool requirements (which tools need a desktop selection vs. a URL), see the `/figma-to-component` command.
 
 ### Bottom-up (code → Figma) — the weaker leg, use with calibrated expectations
 

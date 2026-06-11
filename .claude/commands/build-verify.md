@@ -11,11 +11,11 @@ npm run build
 
 ## Step 2 — Start dev server and capture the port
 
-Run the dev server and redirect output to a temp file so the port can be read:
+Run the dev server, capture its PID to a file (so it persists across tool calls), and wait for it to be ready:
 
 ```bash
 npm run dev > /tmp/dev-server.txt 2>&1 &
-DEV_PID=$!
+echo $! > /tmp/dev-pid.txt
 sleep 3
 cat /tmp/dev-server.txt
 ```
@@ -48,10 +48,10 @@ Use the Read tool on `/tmp/build-verify.png`. Report:
 
 ## Step 5 — Kill the dev server
 
-Use the PID captured in Step 2 — more reliable than `kill %1` which depends on job numbering:
+Read the PID written in Step 2 and kill the server:
 
 ```bash
-kill $DEV_PID
+kill $(cat /tmp/dev-pid.txt)
 ```
 
 ## Report format

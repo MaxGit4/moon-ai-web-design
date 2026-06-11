@@ -191,7 +191,6 @@ export default function App() {
           primaryCta={{ label: 'Explore Collection', href: '#' }}
           secondaryCta={{ label: 'Our Story', href: '#' }}
           image={img('moon-hero', 800, 1000)}
-          imageAlt="A spherical ceramic vase with a matte earth tone finish"
         />
 
         <CategoryGrid
