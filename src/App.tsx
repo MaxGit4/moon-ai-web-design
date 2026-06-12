@@ -11,6 +11,7 @@ import BrandStory from './components/BrandStory'
 import Newsletter from './components/Newsletter'
 import InstagramFeed from './components/InstagramFeed'
 import Footer from './components/Footer'
+import ProductConfigurator from './components/ProductConfigurator'
 
 // ─── Placeholder images — replace with Unsplash spheric-nature photos ──────────
 // Recommended search: https://unsplash.com/s/photos/sphere-nature
@@ -192,6 +193,8 @@ export default function App() {
           secondaryCta={{ label: 'Our Story', href: '#' }}
           image={img('moon-hero', 800, 1000)}
         />
+
+        <ProductConfigurator />
 
         <CategoryGrid
           title="Shop by Category"
